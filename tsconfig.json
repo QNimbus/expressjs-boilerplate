@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "rootDir": "./" /* Specify the root folder within your source files. */,
+    "outDir": "./" /* Specify an output folder for all emitted files. */,
+    "composite": true /* Enable constraints that allow a TypeScript project to be used with project references. */,
+    "resolveJsonModule": true /* Enable importing .json files. */
+  },
+  "files": ["package.json"]
+}

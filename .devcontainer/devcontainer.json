@@ -1,0 +1,80 @@
+{
+  "name": "Node.js & TypeScript",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:18-bullseye",
+  // Features to add to the dev container. More info: https://containers.dev/implementors/features.
+  // "features": {},
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+  // Use 'postCreateCommand' to run commands after the container is created.
+  // "postCreateCommand": "yarn install",
+  // Configure tool-specific properties.
+  "customizations": {
+    // Configure properties specific to VS Code.
+    "vscode": {
+      // Set *default* container specific settings.json values on container create.
+      "settings": {
+        "explorer.autoReveal": true,
+        "explorer.autoRevealExclude": {
+          "**/node_modules": true,
+          "**/bower_components": true
+        },
+        "explorer.fileNesting.enabled": true,
+        "explorer.fileNesting.patterns": {
+          "*.ts": "${capture}.js",
+          "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+          "*.jsx": "${capture}.js",
+          "*.tsx": "${capture}.ts",
+          "tsconfig.json": "tsconfig.*.json, tsconfig.tsbuildinfo",
+          "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml"
+        },
+        "prettier.semi": true,
+        "prettier.tabWidth": 2,
+        "prettier.useTabs": false,
+        "prettier.singleQuote": false,
+        "prettier.printWidth": 160,
+        "[json]": {
+          "editor.quickSuggestions": {
+            "strings": true
+          },
+          "editor.tabSize": 2,
+          "editor.insertSpaces": true,
+          "editor.formatOnSave": true,
+          "editor.suggest.insertMode": "replace",
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[jsonc]": {
+          "editor.quickSuggestions": {
+            "strings": true
+          },
+          "editor.tabSize": 2,
+          "editor.insertSpaces": true,
+          "editor.formatOnSave": true,
+          "editor.suggest.insertMode": "replace",
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[javascript]": {
+          "editor.tabSize": 2,
+          "editor.insertSpaces": true,
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[typescript]": {
+          "editor.tabSize": 2,
+          "editor.insertSpaces": true,
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "workbench.colorCustomizations": {
+          "statusBar.background": "#8B7E74",
+          "statusBar.noFolderBackground": "#8B7E74",
+          "statusBar.debuggingBackground": "#C7BCA1",
+          "statusBarItem.remoteBackground": "#65647C"
+        }
+      },
+      // Add the IDs of extensions you want installed when the container is created.
+      "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode", "oouo-diogo-perdigao.docthis"]
+    }
+  }
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
+}
