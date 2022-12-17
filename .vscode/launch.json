@@ -14,7 +14,8 @@
       "preLaunchTask": "npm: build:dev",
       "sourceMaps": true,
       "smartStep": true,
-      "internalConsoleOptions": "openOnSessionStart"
+      "internalConsoleOptions": "openOnSessionStart",
+      "env": { "NODE_ENV": "development" }
     }
   ]
 }

@@ -4,6 +4,7 @@ import http from "http";
 import https from "https";
 
 // Third party imports
+import merge from "lodash/merge";
 
 const environments = ["development"] as const;
 const isValidEnvironment = (env: string): env is AppEnvironment => environments.includes(env as AppEnvironment);
@@ -35,11 +36,13 @@ export interface ExpressConfig {
 }
 
 export interface EnvironmentConfig {
+  allowEmptyRouter: boolean;
   express: ExpressConfig;
 }
 
 const config: AppConfig = {
   default: {
+    allowEmptyRouter: true,
     express: {
       protocol: AppProtocol.HTTP,
       options: {},
@@ -60,4 +63,4 @@ const config: AppConfig = {
 };
 
 export const { ...appConfig } =
-  process.env.NODE_ENV && isValidEnvironment(process.env.NODE_ENV) ? Object.assign({}, config.default, config[process.env.NODE_ENV]) : config.default;
+  process.env.NODE_ENV && isValidEnvironment(process.env.NODE_ENV) ? merge(config.default, config[process.env.NODE_ENV]) : config.default;

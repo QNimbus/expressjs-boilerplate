@@ -1,6 +1,7 @@
 // Node imports
 
 // Local imports
+import { appConfig } from "../../config";
 import { Controller, RouteType, getControllers } from "./Controller";
 
 // Third party imports
@@ -39,7 +40,7 @@ export class Router {
   }
 
   public route(app: Express.Application): void {
-    if (this._controllers.length <= 0) {
+    if (!appConfig.allowEmptyRouter && this._controllers.length <= 0) {
       throw RangeError("Router needs at least one controller");
     }
 

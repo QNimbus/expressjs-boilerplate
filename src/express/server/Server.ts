@@ -86,7 +86,7 @@ export class ExpressServer {
     this._server = ExpressServer.createServer(appConfig.express.options, this._app);
 
     // Configure ExpressJS app (see: https://expressjs.com/en/4x/api.html#app.settings.table)
-    this._app.set("env", undefined); //process.env.NODE_ENV);
+    this._app.set("env", process.env.NODE_ENV);
     this._app.set("x-powered-by", process.env.NODE_ENV !== "production");
 
     // Configure ExpressJS app custom values
@@ -179,11 +179,11 @@ export class ExpressServer {
    * @return {*}  {Promise<ExpressServer>}
    * @memberof ExpressServer
    */
-  public static async getDefault(controllersPath: string): Promise<ExpressServer> {
-    const router = await Router.getDefault(controllersPath);
-    const server = new ExpressServer(router);
-
-    return server;
+  public static async getDefault(controllersPath?: string): Promise<ExpressServer> {
+    if (controllersPath) {
+      return new ExpressServer(await Router.getDefault(controllersPath));
+    }
+    return new ExpressServer();
   }
 
   /**
