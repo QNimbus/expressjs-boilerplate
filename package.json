@@ -1,6 +1,6 @@
 {
-	"name": "express-server",
-	"version": "0.0.1",
+	"name": "expressjs-boilerplate",
+	"version": "0.0.2",
 	"main": "dist/index.js",
 	"author": "B. van Wetten <bas@vanwetten.com>",
 	"license": "MIT",

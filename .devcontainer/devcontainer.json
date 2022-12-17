@@ -71,11 +71,67 @@
           "statusBar.noFolderBackground": "#8B7E74",
           "statusBar.debuggingBackground": "#C7BCA1",
           "statusBarItem.remoteBackground": "#65647C"
+        },
+        "psi-header.changes-tracking": {
+          "isActive": true,
+          "modAuthor": "Modified by:",
+          "modDate": "Modified:",
+          "include": [],
+          "includeGlob": ["**/*/*.ts"],
+          "exclude": [],
+          "excludeGlob": [],
+          "autoHeader": "manualSave",
+          "enforceHeader": true,
+          "replace": ["File:", "Path:", "Project:", "Version:", "Modified:", "Modified by:"]
+        },
+        "psi-header.templates": [
+          {
+            "language": "javascript",
+            "template": [
+              "File: <<filename>>",
+              "Path: <<relativepath>>",
+              "Project: <<projectname>>",
+              "Version: <<projectversion>>",
+              "Copyright (c) <<yeartoyear(fc, now)>> <<company>>",
+              "-----",
+              "Author: <<author>> at <<<authoremail>>>",
+              "Created: <<filecreated('DD-MM-YYYY HH:mm')>>",
+              "",
+              "Modified: <<dateformat('DD-MM-YYYY HH:mm')>>",
+              "Modified by: <<author>> at <<<authoremail>>>",
+              "-----"
+            ]
+          },
+          {
+            "language": "typescript",
+            "mapTo": "javascript"
+          }
+        ],
+        "psi-header.config": {
+          "initials": "BVW",
+          "author": "B. van Wetten",
+          "authorEmail": "bas@vanwetten.com",
+          "company": "BeSquared",
+          "copyrightHolder": "BeSquared",
+          "license": "MIT",
+          "spacesBetweenYears": true,
+          "forceToTop": true,
+          "blankLinesAfter": 1
         }
       },
       // Add the IDs of extensions you want installed when the container is created.
-      "extensions": ["dbaeumer.vscode-eslint", "EditorConfig.EditorConfig", "esbenp.prettier-vscode", "oouo-diogo-perdigao.docthis", "donjayamanne.git-extension-pack"]
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "EditorConfig.EditorConfig",
+        "esbenp.prettier-vscode",
+        "oouo-diogo-perdigao.docthis",
+        "donjayamanne.git-extension-pack",
+        "psioniq.psi-header"
+      ]
     }
+  },
+  "containerEnv": {
+    "TZ": "Europe/Amsterdam"
   }
   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
   // "remoteUser": "root"
