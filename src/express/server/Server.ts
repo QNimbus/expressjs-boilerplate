@@ -1,3 +1,18 @@
+/*
+ * File: Server.ts
+ * Path: /src/express/server
+ * Project: expressjs-boilerplate
+ * Version: 0.0.2
+ * Copyright (c) 2022 BeSquared
+ * -----
+ * Author: B. van Wetten at <bas@vanwetten.com>
+ * Created: 17-12-2022 12:55
+ * 
+ * Modified: 17-12-2022 14:33
+ * Modified by: B. van Wetten at <bas@vanwetten.com>
+ * -----
+ */
+
 // Node imports
 import http from "http";
 import https from "https";

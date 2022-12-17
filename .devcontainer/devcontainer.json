@@ -79,7 +79,7 @@
           "include": [],
           "includeGlob": ["**/*/*.ts"],
           "exclude": [],
-          "excludeGlob": [],
+          "excludeGlob": ["**/*/index.ts"],
           "autoHeader": "manualSave",
           "enforceHeader": true,
           "replace": ["File:", "Path:", "Project:", "Version:", "Modified:", "Modified by:"]
